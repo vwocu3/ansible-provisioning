@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:22.10
 
 RUN apt-get update -y
 RUN apt-get install at gawk net-tools openssh-server iptables -y

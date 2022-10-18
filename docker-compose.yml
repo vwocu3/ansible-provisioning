@@ -5,12 +5,22 @@ version: '3.7'
 
 services:
   ssh_server01:
-    hostname: ssh_server01
-    container_name: ssh_server01
+    hostname: ubuntu22_server01
+    container_name: ubuntu22_server01
     build:
-      context: ./files
+      context: ./files_ubuntu22_server01
     cap_add: 
       - NET_ADMIN
     ports: 
-      - "2222:22"
+      - "2221:22"
     command: ["/usr/bin/docker-entrypoint.sh"] 
+
+  ssh_server02:
+    hostname: centos8_server02
+    container_name: centos8_server02
+    build:
+      context: ./files_centos8_server02
+    cap_add: 
+      - NET_ADMIN
+    ports: 
+      - "2223:22"
