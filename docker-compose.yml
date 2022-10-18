@@ -1,0 +1,16 @@
+---
+# compose 3.7 / docker version needed -> 18.06.0+
+
+version: '3.7'
+
+services:
+  ssh_server01:
+    hostname: ssh_server01
+    container_name: ssh_server01
+    build:
+      context: ./files
+    cap_add: 
+      - NET_ADMIN
+    ports: 
+      - "2222:22"
+    command: ["/usr/bin/docker-entrypoint.sh"] 
