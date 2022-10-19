@@ -24,3 +24,20 @@ services:
       - NET_ADMIN
     ports: 
       - "2223:22"
+
+
+  ssh_server03:
+    hostname: windowsltsc2019_server03
+    container_name: windowsltsc2019_server03
+    build:
+      context: ./files_windowsltsc2019_server03
+
+  # ssh_server04:
+  #   image: mcr.microsoft.com/windows/servercore:ltsc2019
+  #   container_name: windowservice
+  #   restart: always
+  #   mem_limit: 10g
+  #   # volumnes:
+  #   #   - /sourcepath:/dockerpath
+  #   ports: 
+  #     - "2224:22"        
